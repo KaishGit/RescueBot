@@ -13,13 +13,8 @@ public class AudioManager : MonoBehaviour
     [SerializeField] AudioClip Help;
     [SerializeField] AudioClip SaveVictim;
     [SerializeField] AudioClip Victory;
-
-
     [SerializeField] AudioClip Bark;
     [SerializeField] AudioClip Cry;
-    [SerializeField] AudioClip VitoriaFase;
-    [SerializeField] AudioClip DerrotaFase;
-    [SerializeField] AudioClip BotaoUi;
 
     private void Awake()
     {
@@ -31,11 +26,11 @@ public class AudioManager : MonoBehaviour
 
     private void Start()
     {
-        AudioSourceBackground.clip = ObterClipBackground();
+        AudioSourceBackground.clip = GetClipBackground();
         AudioSourceBackground.Play();
     }
 
-    private AudioClip ObterClipBackground()
+    private AudioClip GetClipBackground()
     {
         return ClipsBackground[Random.Range(0, ClipsBackground.Length)];
     }
@@ -60,7 +55,6 @@ public class AudioManager : MonoBehaviour
         AudioSourceSFX.PlayOneShot(Victory);
     }
 
-
     public void PlaySfxBark()
     {
         AudioSourceSFX.PlayOneShot(Bark);
@@ -69,30 +63,5 @@ public class AudioManager : MonoBehaviour
     public void PlaySfxCry()
     {
         AudioSourceSFX.PlayOneShot(Cry);
-    }
-
-    public void PlaySfxVitoriaFase()
-    {
-        AudioSourceSFX.PlayOneShot(VitoriaFase);
-    }
-
-    public void PlaySfxDerrotaFase()
-    {
-        AudioSourceSFX.PlayOneShot(DerrotaFase);
-    }
-
-    public void PlaySfxBotaoUi()
-    {
-        AudioSourceSFX.PlayOneShot(BotaoUi);
-    }
-
-    public void PausarMusica()
-    {
-        AudioSourceBackground.Pause();
-    }
-
-    public void DespausarMusica()
-    {
-        AudioSourceBackground.Play();
     }
 }

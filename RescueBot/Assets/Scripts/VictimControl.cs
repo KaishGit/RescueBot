@@ -2,16 +2,12 @@
 
 public class VictimControl : MonoBehaviour
 {
+    public GameObject BurningPrefab;
+
     private bool _isHooked;
     private bool _isSaved;
-    public GameObject BurningPrefab;
     private GameObject _burning;
     private GameObject _hook;
-
-    void Start()
-    {
-
-    }
 
     void Update()
     {
@@ -23,7 +19,6 @@ public class VictimControl : MonoBehaviour
             if (_burning != null)
             {
                 _burning.transform.position = transform.position;
-                //_burning.transform.rotation = transform.rotation;
             }
         }
 

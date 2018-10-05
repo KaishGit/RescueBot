@@ -3,13 +3,12 @@
 
 public class JumpControl : MonoBehaviour
 {
-    [SerializeField] float Force;
-
+    public float Force;
+    public GameObject BurningPrefab;
 
     private Rigidbody2D _rigidBody;
     private SpriteRenderer _spriteRenderer;
     private Animator _animator;
-    public GameObject BurningPrefab;
     private GameObject _burning;
 
     private void Awake()
@@ -19,12 +18,7 @@ public class JumpControl : MonoBehaviour
         _animator = GetComponent<Animator>();
     }
 
-    void Start()
-    {
-
-    }
-
-    void Update()
+    private void Update()
     {
         if (_burning == null)
         {

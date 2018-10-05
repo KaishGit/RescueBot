@@ -4,17 +4,6 @@ public class HookControl : MonoBehaviour
 {
     private GameObject _victim;
 
-    void Start()
-    {
-        
-    }
-
-    void Update()
-    {
-        
-    }
-
-
     public bool HookVictim(GameObject victim)
     {
         if(_victim == null)
